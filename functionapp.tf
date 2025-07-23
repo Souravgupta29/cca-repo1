@@ -2,7 +2,7 @@
 
 # Existing App Service Plan (Linux)
 data "azurerm_service_plan" "existing_asp" {
-  name                = "ai-analytics-dev-eus-001-ai-services-sp"
+  name                = "cca-test-func-asp"
   resource_group_name = data.azurerm_resource_group.existing_rg.name
 }
 
