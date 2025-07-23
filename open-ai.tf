@@ -3,7 +3,7 @@ variable "sku" {
 }
 
 resource "azurerm_cognitive_account" "azure_openai" {
-  name                = "${terraform.workspace}-azureopenai_name"
+  name                = "${terraform.workspace}-${var.azureopenai_name}"  
   location            = var.location
   resource_group_name = data.azurerm_resource_group.existing_rg.name
   sku_name            = var.sku

@@ -1,4 +1,4 @@
-location = "eastus"
+location = "australiaeast"
 multiService_name = "cca-dev-multisvc"
 azureaisearch_name = "cca-dev-aisearch"
 azureopenai_name = "cca-dev-openaisvc"

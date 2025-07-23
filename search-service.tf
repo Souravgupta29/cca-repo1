@@ -1,5 +1,5 @@
 resource "azurerm_search_service" "ai_search" {
-  name                = "${terraform.workspace}-azureaisearch_name"
+  name                = "${terraform.workspace}-${var.azureaisearch_name}" 
   location            = var.location
   resource_group_name = data.azurerm_resource_group.existing_rg.name
   sku                 = "standard"

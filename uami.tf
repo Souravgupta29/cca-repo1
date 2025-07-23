@@ -1,7 +1,7 @@
 
 
 resource "azurerm_user_assigned_identity" "uami" {
-  name                = "${terraform.workspace}-uami_name"
+  name                = "${terraform.workspace}-${var.uami_name}"
   location            = var.location
   resource_group_name = data.azurerm_resource_group.existing_rg.name
 }

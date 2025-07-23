@@ -1,5 +1,5 @@
 resource "azurerm_cognitive_account" "content_safety" {
-  name                = "${terraform.workspace}-contentsafety_name"
+  name                = "${terraform.workspace}-${var.contentsafety_name}"
   location            = var.location
   resource_group_name = data.azurerm_resource_group.existing_rg.name
   sku_name = "S0"

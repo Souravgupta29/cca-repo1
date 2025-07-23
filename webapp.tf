@@ -21,7 +21,7 @@ output "webappaspid" {
 
 
 resource "azurerm_windows_web_app" "webApplication" {
-  name = "${terraform.workspace}-${var.webapp_name}"
+  name                = "${terraform.workspace}-${var.webapp_name}"
   location            = var.location
   resource_group_name = data.azurerm_resource_group.existing_rg.name
   service_plan_id = azurerm_service_plan.webappasp.id

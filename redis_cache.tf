@@ -1,6 +1,6 @@
 
 resource "azurerm_redis_cache" "example" {
-  name                = "${terraform.workspace}-redis_cache_name"
+  name                = "${terraform.workspace}-${var.redis_cache_name}"   
   location            = var.location
   resource_group_name = data.azurerm_resource_group.existing_rg.name  # You need to define this elsewhere
   capacity            = 0

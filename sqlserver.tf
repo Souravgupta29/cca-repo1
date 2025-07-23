@@ -6,7 +6,7 @@ variable "sku_name" {
 
 
 resource "azurerm_mssql_server" "sqlserver" {
-  name                         = var.sqlserver_name
+  name                         = "${terraform.workspace}-${var.sqlserver_name}"    
   location                     = var.location
   resource_group_name          = data.azurerm_resource_group.existing_rg.name
   version                      = "12.0"
@@ -19,7 +19,7 @@ resource "azurerm_mssql_server" "sqlserver" {
 }
 
 resource "azurerm_mssql_database" "sqlDB1" {
-  name                = "${terraform.workspace}-sqlDB1_name"
+  name                = "${terraform.workspace}-${var.sqlDB1_name}"
   server_id           = azurerm_mssql_server.sqlserver.id
   max_size_gb         = 500
   zone_redundant      = false
@@ -28,7 +28,7 @@ resource "azurerm_mssql_database" "sqlDB1" {
 }
 
 resource "azurerm_mssql_database" "sqlDB2" {
-  name                = "${terraform.workspace}-sqlDB2_name"
+  name                = "${terraform.workspace}-${var.sqlDB2_name}"
   server_id           = azurerm_mssql_server.sqlserver.id
   max_size_gb         = 500
   zone_redundant      = false
