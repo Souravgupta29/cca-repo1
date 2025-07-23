@@ -45,5 +45,5 @@ variable "redis_cache_name" {}
 
 
 data "azurerm_resource_group" "existing_rg" {
-  name = "ai-analytics-domain-dev-eus-001-ai-services-rg"
+  name = "rg-cca-tf-testing"
 }
