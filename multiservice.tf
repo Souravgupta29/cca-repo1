@@ -1,10 +1,10 @@
 resource "azurerm_cognitive_account" "cognitive_service" {
-  name                = "${terraform.workspace}-multiService_name"
+  name                = "${terraform.workspace}-${var.multiService_name}"
   location            = var.location
   resource_group_name = data.azurerm_resource_group.existing_rg.name
   sku_name            = var.sku
   kind                = "CognitiveServices"
-  custom_subdomain_name = "${terraform.workspace}-multiService_name"
+  custom_subdomain_name = "${terraform.workspace}-${var.multiService_name}"
   
   identity {
     type         = "SystemAssigned, UserAssigned"

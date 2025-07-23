@@ -3,7 +3,7 @@ resource "azurerm_cognitive_account" "translator" {
   location                    = var.location
   resource_group_name         = data.azurerm_resource_group.existing_rg.name
   kind                        = "TextTranslation"
-  custom_subdomain_name       = var.translator_name
+  custom_subdomain_name       = "${terraform.workspace}-${var.translator_name}"
   sku_name = "S1"
   public_network_access_enabled = true
 

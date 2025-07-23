@@ -8,7 +8,7 @@ resource "azurerm_cognitive_account" "azure_openai" {
   resource_group_name = data.azurerm_resource_group.existing_rg.name
   sku_name            = var.sku
   kind                = "OpenAI"
-  custom_subdomain_name = "${terraform.workspace}-azureopenai_name"
+  custom_subdomain_name = "${terraform.workspace}-${var.azureopenai_name}"
  identity {
     type         = "SystemAssigned, UserAssigned"
     identity_ids = [azurerm_user_assigned_identity.uami.id]
