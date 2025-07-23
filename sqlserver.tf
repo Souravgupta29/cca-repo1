@@ -24,7 +24,7 @@ resource "azurerm_mssql_database" "sqlDB1" {
   max_size_gb         = 500
   zone_redundant      = false
   storage_account_type = "Local"
-  sku_name = "sku_name"
+  sku_name = var.sku_name
 }
 
 resource "azurerm_mssql_database" "sqlDB2" {
@@ -33,7 +33,7 @@ resource "azurerm_mssql_database" "sqlDB2" {
   max_size_gb         = 500
   zone_redundant      = false
   storage_account_type = "Local"
-  sku_name = "sku_name"
+  sku_name = var.sku_name
 }
 
 resource "azurerm_mssql_firewall_rule" "allow_azure_services" {
