@@ -6,7 +6,7 @@ variable "webAppPlan_Sku" {
 
 
 resource "azurerm_service_plan" "webappasp" {
-  name                = "${terraform.workspace}-webappasp_name"
+  name                = "${terraform.workspace}-${var.webappasp_name}"
   location            = var.location
   resource_group_name = data.azurerm_resource_group.existing_rg.name
 
